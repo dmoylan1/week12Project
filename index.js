@@ -17,7 +17,7 @@ class Bottle {
 }
 
 class OrderService {
-    static url = 'https://crudcrud.com/api/215e3261c2574feea71d8417050dd69d/orders';
+    static url = 'https://630105c89a1035c7f8fc9ddd.mockapi.io/api/orders';
 
     static getAllOrders() {
         return $.get(this.url);
@@ -104,35 +104,34 @@ class DOMManager {
 
     static render(orders) {
         this.orders = orders;
-        $('#app').empty();
+        $('#inventory').empty();
         for(let order of orders) {
-            $('#app').prepend(
+            $('#inventory').append(
                 `<div id="${order._id}" class="card">
                     <div class="card-header">
-                        <h2>${order.name}</h2>
+                        <h4>${order.name}</h4>
                         <button class="btn btn-danger" onclick="DOMManager.deleteOrder('${order._id}')">Delete</button>
                     </div>
                     <div class="card-body">
                         <div class="card">
                             <div class="row">
                                 <div class="col-sm">
-                                <input type="text" id="${order._id}-bottle-color" class="form-control" placeholder="Bottle Color">
+                                    <input type="text" id="${order._id}-bottle-color" class="form-control" placeholder="Bottle Color">
                                 </div>
                                 <div class="col-sm">
                                     <input type="text" id="${order._id}-bottle-quantity" class="form-control" placeholder="Quantity">
                                 </div>
                             </div>
-                            <button id="${order._id}-new-bottle" onclick="DOMManager.addBottle('${order._id}')" 
-                            class="btn btn-primary form-control">Add</button>
+                            <button id="${order._id}-new-bottle" onclick="DOMManager.addBottle('${order._id}')" class="btn btn-primary form-control">Add</button>
                         </div>
                     </div>
                 </div><br>`
             );
             for (let bottle of order.bottles) {
-                $(`#${order._id}`).find('.card-body').append(
+                $(`#${order._id}`).find('.card-body').prepend(
                     `<p>
-                        <span id="color-${bottle._id}"><strong>Color: </strong> ${bottle.name}</span>
-                        <span id="quantity-${bottle._id}"><strong>Quantity: </strong> ${bottle.area}</span>
+                        <span id="color-${bottle._id}"><strong>Color: </strong> ${bottle.color}</span>
+                        <span id="quantity-${bottle._id}"><strong>Quantity: </strong> ${bottle.quantity}</span>
                         <button class="btn btn-danger" onclick="DOMManager.deleteBottle('${order._id}', '${bottle._id}')">
                         Delete Bottle</button>`
                 );
