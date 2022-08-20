@@ -16,6 +16,7 @@ class Bottle {
     }
 }
 
+// Interact with API
 class OrderService {
     static url = 'https://630105c89a1035c7f8fc9ddd.mockapi.io/api/orders';
 
@@ -49,6 +50,7 @@ class OrderService {
     }
 }
 
+// Create, read, update, delete from DOM
 class DOMManager {
     static orders;
 
