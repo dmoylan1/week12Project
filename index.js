@@ -110,7 +110,7 @@ class DOMManager {
                 `<div id="${order._id}" class="card">
                     <div class="card-header">
                         <h4>${order.name}</h4>
-                        <button class="btn btn-danger" onclick="DOMManager.deleteOrder('${order._id}')">Delete</button>
+                        <button class="btn btn-warning" onclick="DOMManager.deleteOrder('${order._id}')">Delete</button>
                     </div>
                     <div class="card-body">
                         <div class="card">
@@ -132,7 +132,7 @@ class DOMManager {
                     `<p>
                         <span id="color-${bottle._id}"><strong>Color: </strong> ${bottle.color}</span>
                         <span id="quantity-${bottle._id}"><strong>Quantity: </strong> ${bottle.quantity}</span>
-                        <button class="btn btn-danger" onclick="DOMManager.deleteBottle('${order._id}', '${bottle._id}')">
+                        <button class="btn btn-warning" onclick="DOMManager.deleteBottle('${order._id}', '${bottle._id}')">
                         Delete Bottle</button>`
                 );
             }
