@@ -15,13 +15,25 @@
     </div>
     <br>
     <div id="new-order" class="jumbotron">
-        <h3>New Order Name:</h3>
-        <input type="text" id="new-order-name" class="form-control"><br>
+        <h3>New Order</h3>
+        <input type="text" id="new-order-name" class="form-control" placeholder="Customer Name"><br>
+        <div class="card-body">
+            <div class="card">
+                <div class="row">
+                    <div class="col-sm">
+                        <input type="text" id="new-bottle-color" class="form-control" placeholder="Bottle Color">
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" id="new-bottle-quantity" class="form-control" placeholder="Order Quantity">
+                    </div>
+                </div>
+            </div>
+        </div>
         <button id="create-new-order" class="btn btn-primary form-control">Create</button>
     </div>
     
 <!-- Div to contain orders -->
-    <div id="inventory">
+    <div id="orders-list">
     </div>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
